@@ -1,7 +1,6 @@
 package com.example.lab08;
 
 import androidx.room.Embedded;
-import androidx.room.Junction;
 import androidx.room.Relation;
 import java.util.List;
 
@@ -11,10 +10,7 @@ public class CategoriaConEdificaciones {
 
     @Relation(
             parentColumn = "id_categoria",
-            entityColumn = "id_edificacion",
-            associateBy = @Junction(EdificacionCategoriaCrossRef.class)
+            entityColumn = "id_categoria"
     )
     public List<Edificacion> edificaciones;
 }
-
-

@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-
 }
 
 android {
@@ -41,9 +40,17 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Versión de Room
     val room_version = "2.6.1"
 
+    // Librerías de Room
     implementation("androidx.room:room-runtime:$room_version")
-
     implementation("androidx.room:room-ktx:$room_version")
+
+    // Procesador de anotaciones para Room (necesario para generar las clases)
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // Si usas Kotlin (kapt en lugar de annotationProcessor)
+    // kapt("androidx.room:room-compiler:$room_version")
 }

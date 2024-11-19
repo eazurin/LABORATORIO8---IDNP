@@ -2,33 +2,16 @@ package com.example.lab08;
 
 import androidx.room.Entity;
 
-@Entity(tableName = "edificacion_categoria_cross_ref")
+@Entity(primaryKeys = {"id_edificacion", "id_categoria"})
 public class EdificacionCategoriaCrossRef {
-    public int edificacionId;
-    public int categoriaId;
 
-    // Constructor
-    public EdificacionCategoriaCrossRef(int edificacionId, int categoriaId) {
-        this.edificacionId = edificacionId;
-        this.categoriaId = categoriaId;
-    }
+    public int id_edificacion;
+    public int id_categoria;
 
-    // Getters y Setters
-    public int getEdificacionId() {
-        return edificacionId;
-    }
+    public EdificacionCategoriaCrossRef() {}
 
-    public void setEdificacionId(int edificacionId) {
-        this.edificacionId = edificacionId;
-    }
-
-    public int getCategoriaId() {
-        return categoriaId;
-    }
-
-    public void setCategoriaId(int categoriaId) {
-        this.categoriaId = categoriaId;
+    public EdificacionCategoriaCrossRef(int id_edificacion, int id_categoria) {
+        this.id_edificacion = id_edificacion;
+        this.id_categoria = id_categoria;
     }
 }
-
-

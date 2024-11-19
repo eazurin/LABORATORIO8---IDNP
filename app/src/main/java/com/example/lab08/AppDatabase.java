@@ -6,10 +6,16 @@ import androidx.room.RoomDatabase;
 import android.content.Context;
 
 import com.example.lab08.dao.CategoriaDao;
-import com.example.lab08.dao.ComentarioDao;
 import com.example.lab08.dao.EdificacionDao;
+import com.example.lab08.dao.ComentarioDao;
+import com.example.lab08.dao.EdificacionCategoriaDao;
 
-@Database(entities = {Categoria.class, Edificacion.class, Comentario.class}, version = 1)
+@Database(entities = {
+        Categoria.class,
+        Edificacion.class,
+        Comentario.class,
+        EdificacionCategoriaCrossRef.class
+}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase INSTANCE;
@@ -17,6 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract CategoriaDao categoriaDao();
     public abstract EdificacionDao edificacionDao();
     public abstract ComentarioDao comentarioDao();
+    public abstract EdificacionCategoriaDao edificacionCategoriaDao();
 
     public static AppDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {

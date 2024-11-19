@@ -1,8 +1,8 @@
 package com.example.lab08;
 
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 @Entity(
         tableName = "edificaciones",
@@ -15,11 +15,11 @@ import androidx.room.ForeignKey;
 )
 public class Edificacion {
     @PrimaryKey(autoGenerate = true)
-    private int id_edificacion;
-    private String nombre;
-    private String descripcion;
-    private String imagen;
-    private int id_categoria;
+    public int id_edificacion;
+    public String nombre;
+    public String descripcion;
+    public String imagen;
+    public int id_categoria; // Clave foránea
 
     // Getters y setters
     public int getId_edificacion() {
@@ -62,4 +62,3 @@ public class Edificacion {
         this.id_categoria = id_categoria;
     }
 }
-

@@ -15,10 +15,10 @@ import androidx.room.ForeignKey;
 )
 public class Comentario {
     @PrimaryKey(autoGenerate = true)
-    private int id_comentario;
-    private int id_edificacion;
-    private String contenido;
-    private String fecha_comentario;
+    public int id_comentario;
+    public int id_edificacion;
+    public String contenido;
+    public String fecha_comentario;
 
     // Getters y setters
     public int getId_comentario() {
@@ -53,4 +53,3 @@ public class Comentario {
         this.fecha_comentario = fecha_comentario;
     }
 }
-

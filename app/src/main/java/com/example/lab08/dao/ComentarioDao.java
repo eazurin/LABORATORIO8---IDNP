@@ -3,6 +3,7 @@ package com.example.lab08.dao;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.lab08.Comentario;
@@ -26,4 +27,7 @@ public interface ComentarioDao {
 
     @androidx.room.Query("SELECT * FROM comentarios WHERE id_comentario = :id")
     Comentario obtenerComentarioPorId(int id);
+
+    @Query("SELECT * FROM comentarios WHERE id_edificacion = :idEdificacion")
+    List<Comentario> obtenerComentariosPorEdificacion(int idEdificacion);
 }

@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "categorias")
 public class Categoria {
     @PrimaryKey(autoGenerate = true)
-    private int id_categoria;
-    private String nombre_categoria;
+    public int id_categoria;
+    public String nombre_categoria;
 
     // Getters y setters
     public int getId_categoria() {
@@ -26,4 +26,3 @@ public class Categoria {
         this.nombre_categoria = nombre_categoria;
     }
 }
-
