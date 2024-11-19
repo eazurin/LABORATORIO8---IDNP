@@ -3,9 +3,12 @@ package com.example.lab08.dao;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 
 import com.example.lab08.Categoria;
+import com.example.lab08.CategoriaConEdificaciones;
 
 import java.util.List;
 
@@ -21,10 +24,13 @@ public interface CategoriaDao {
     @Delete
     int borrarCategoria(Categoria categoria);
 
-    @androidx.room.Query("SELECT * FROM categorias")
+    @Query("SELECT * FROM categorias")
     List<Categoria> obtenerTodasCategorias();
 
-    @androidx.room.Query("SELECT * FROM categorias WHERE id_categoria = :id")
+    @Query("SELECT * FROM categorias WHERE id_categoria = :id")
     Categoria obtenerCategoriaPorId(int id);
-}
 
+    @Transaction
+    @Query("SELECT * FROM categorias WHERE id_categoria = :id")
+    CategoriaConEdificaciones obtenerCategoriaConEdificaciones(int id);
+}
